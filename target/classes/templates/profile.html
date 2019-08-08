@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+
+	<th:block th:include="/_inccss"></th:block>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+
+<title>Profile</title>
+</head>
+<body>
+<th:block th:include="/_header"></th:block>
+
+
+<div class="container-fluid">
+
+ <div class="profil">
+        <h4 class="h4"> My account</h4> <br>
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-5 col-sm-offset-4 col-xs-offset-1 col-sm-4">
+                    <a href="/profile/publications" class="btn btn-default"> My publication</a>
+                </div>
+                <div class="col-xs-5 col-sm-4">
+                    <a href="/profile" class="btn btn-default"> My profile</a>
+                </div>
+
+
+            </div> <br> <br>
+            <form class="col-md-8 col-md-offset-2">
+                    <label for="firstName">FirstName</label>
+                    <input placeholder="firstName" type="text" name="Firstname" class="form-control" th:attr="value=${user.firstName}">
+                     <label for="lastName">LastName</label>
+                    <input placeholder="lastName" type="text" name="lastName" class="form-control"  th:attr="value=${user.lastName}">
+                    <label for="name">Email address </label>
+                    <input placeholder="Name" type="text" name="email" class="form-control"  th:attr="value=${user.email}"> 
+                    <label for="phone">Phone</label>
+                    <input placeholder="phone" type="text" name="phone" class="form-control"  th:attr="value=${user.phone}"> <br>
+                    
+              
+                   <div class="col-xs-12 btn-center">
+                    <input type="submit" value="EDIT" class="btns btn btn-primary "><br>
+                   </div>
+                       
+                        
+                        <br>
+                        <br>
+
+                         
+                    </form>
+            </div>
+        </div>
+        </div>
+
+
+<th:block th:include="/_footer"></th:block>
+<th:block th:include="/_incjs"></th:block>
+
+</body>
+</html>

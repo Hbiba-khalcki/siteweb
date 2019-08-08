@@ -1,0 +1,12 @@
+G:\java\auth\src\main\java\com\projet\constraint\FieldMatch.java
+G:\java\auth\src\main\java\com\projet\config\SecurityConfiguration.java
+G:\java\auth\src\main\java\com\projet\Application.java
+G:\java\auth\src\main\java\com\projet\web\dto\UserRegistrationDto.java
+G:\java\auth\src\main\java\com\projet\Entity\Role.java
+G:\java\auth\src\main\java\com\projet\repository\UserDao.java
+G:\java\auth\src\main\java\com\projet\Entity\User.java
+G:\java\auth\src\main\java\com\projet\service\UserServiceImpl.java
+G:\java\auth\src\main\java\com\projet\web\UserRegistrationController.java
+G:\java\auth\src\main\java\com\projet\web\MainController.java
+G:\java\auth\src\main\java\com\projet\constraint\FieldMatchValidator.java
+G:\java\auth\src\main\java\com\projet\service\UserService.java

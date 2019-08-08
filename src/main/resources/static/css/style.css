@@ -1,0 +1,269 @@
+.nav1{
+    background-color: #ccc !important;
+}
+.nav2{
+    background-color: #72113c !important;
+    margin-bottom:0px!important;
+}
+.nav2 .nav-link{
+    color: #ccc !important;
+
+}
+
+.nav1 .nav-link{
+    color: #222 !important;
+
+}
+.nav1 .nav-item:hover{
+    background-color: #fefefe;
+    
+}
+.nav1 input::placeholder{
+color: #444;
+}
+.nav1 input{
+    color: #222 !important;
+}
+.nav1 .nav-item:hover .nav-link{
+    background-color: white;
+    color: #222 !important;
+    
+}
+.nav2 a{
+	color:white !important;
+}
+
+.topheadermenu{
+    margin-right: 20px;
+}
+
+.navbar li:hover,.navbar li:hover a{
+    color: beige !important;
+    background: #303030;
+    
+}
+.frm{
+    width: 50%;
+    height: 50%;
+    background-color: #fefefe;
+    padding: 3%;
+    margin: 0 auto;
+    margin-right: 50%;
+    border-radius: 15px 5px;
+    
+}
+.signin{
+   
+        margin-top: 0%;
+        
+        
+}
+.frm .btn{
+    border: none;
+    
+}
+
+.frm .log{
+    display: inline-block;
+    border: none;
+   
+} 
+.myfrm{
+    padding: 3%;
+    padding-top:10%;
+}
+.frm{
+    background-color: #fefefe;
+    padding: 3%;
+    border-radius: 15px 5px;
+}
+
+.frm2{
+   padding: 15px;
+    margin: 0 auto;
+    border: 1px solid #ccc;
+    border-radius: 15px 5px;
+    
+}
+
+.frm2 input, .frm2 textarea{
+    width: 100%;
+    margin-bottom: 10px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border-color:#ccc;
+    border-style: solid;
+    
+}
+
+.frm2 .btns{
+    
+    width:150px;
+    margin-left: 35%;
+    
+}
+    
+    
+
+.contact{
+    
+    width: 100vw;
+    margin-top: 0%;
+    
+}
+.contact .border{
+    border: 1px solid  #ccc;
+    border-bottom: none;
+    border-top: none;
+    border-left: none;
+
+}
+.contact .title{
+    text-align: center;
+    font-size: 18px;
+    font-weight: 300;
+}
+.contact .title2{
+    text-align: center;
+    font-size: 22px;
+    font-weight: 600;
+    
+}
+.contact .span{
+    color:blue;
+    font-size: 30px;
+
+}
+.contact .span2{
+    font-size: 30px;
+    color: black;
+}
+.contact .h2{
+    color: black;
+    font-size: 72px;
+    text-align: center;
+   
+    margin-top: 0px;
+padding-top: 20px;
+padding-bottom: 20px;
+}
+
+.mail{
+    position: relative !important;
+    top: 0px !important;
+    color: #969696;
+    text-decoration: none;
+}
+.monbtn{
+    color: #31b0d5;
+    background-color: azure;
+    height: 28vw;
+    width: 100%;
+    font-size: 120px;
+
+}
+#myCarousel{
+    height: 28vw;
+
+}
+#myCarousel img{
+    max-height:28vw;
+  width: 100%;
+}
+.btncontainer , .imgcontainer{
+    margin-bottom: 15px;
+    padding-left: 21px;
+    padding-right: 8px;
+    
+    
+}
+.slidercontainer{
+    padding-left: 0px;
+    padding-right: 0px;
+    margin-bottom: 15px;
+}
+.top-header   a.crt{
+    color: royalblue !important;
+}
+
+.pubimg{
+	max-width:150px;
+	}
+	
+#footer{
+    background: #72113c;
+    padding-bottom: 50px;
+    padding-top: 50px;  
+    
+}
+.footercontainer{
+    padding: 20px ;
+}
+.footercontainer h4{
+    color: #777;
+    text-transform: uppercase
+}
+.footercontainer td {
+    color: #ccc;
+
+}
+.footercontainer .mail{
+    color: #ccc;
+}
+.footercontainer a {
+    color: #ccc;
+}
+.reseauximg{
+    padding-left: 0px;
+}
+.reseaux ul li{
+    list-style: none;
+}
+
+.profil{
+    width: 100vw;
+    margin-top: 0%;
+}
+.profil .h4{
+    color: black;
+    text-transform: uppercase;
+    text-align: center;
+    height: 70px;
+    background-color: #eee;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-top: 0px;
+
+
+}
+
+.profil .btn-center{
+   text-align: center;
+}
+.imgcontainer img{
+	
+    width: 32vw;
+    height: 27vw;
+    margin-bottom: 2vw;
+	
+}
+.title{
+	font-size:32px;
+	text-align: center;
+}
+.desc{
+	font-size:24px;
+	
+}
+
+@media screen and (max-width:480px){
+    .monbtn{
+        font-size: 60px;
+        height: 60vw;
+    }
+    .imgcontainer img{
+	height: auto;
+    width:80vw;
+   
+	
+}

@@ -1,0 +1,13 @@
+com\projet\config\SecurityConfiguration.class
+com\projet\web\dto\UserRegistrationDto.class
+com\projet\constraint\FieldMatch$List.class
+com\projet\repository\UserDao.class
+com\projet\service\UserServiceImpl.class
+com\projet\Entity\User.class
+com\projet\constraint\FieldMatch.class
+com\projet\service\UserService.class
+com\projet\web\MainController.class
+com\projet\Entity\Role.class
+com\projet\constraint\FieldMatchValidator.class
+com\projet\Application.class
+com\projet\web\UserRegistrationController.class

@@ -1,0 +1,145 @@
+<header>
+	<div class="top-header nav1">
+		<div class="container ">
+			<div class="col-md-2 col-xs-6">
+				<a href="">0121587456</a>
+			</div>
+			<div class="col-md-6 hidden-xs"></div>
+			<div class="col-md-1  col-xs-6" sec:authorize="isAuthenticated()">
+				<a href="/profile/publications">Publish</a>
+			</div>
+			<!-- signin modal -->
+			<div class="col-md-1 col-xs-6" sec:authorize="!isAuthenticated()">
+				<a type="button" class="" data-toggle="modal"
+					data-target="#signinmodal">Signin</a>
+				<div id="signinmodal" class="modal fade" role="dialog">
+					<div class="modal-dialog">
+
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal">&times;</button>
+							</div>
+							<div class="modal-body">
+								<form class="myfrm form" th:action="@{/login}" method="post">
+									<label for="email">E-mail Address / Phone Number:</label> <input
+										type="text" id="username" name="username" class="form-control"
+										autofocus="autofocus" placeholder="Enter email/phone number">
+									<label for="pwd">PASSWORD:</label> <input type="password"
+										id="password" name="password" class="form-control"
+										placeholder="Enter password/">
+									<!--<label><input type="checkbox"> Remember me</label>-->
+									<br> <br>
+									<button type="submit" class="log btn btn-primary">SIGNIN</button>
+									<br> <br> <a class="crt" data-toggle="modal"
+										data-target="#signupmodal"> CREATE AN ACCOUNT</a> <br> <br>
+									<button type="submit" class="btn btn-danger">GOOGLE
+										LOGIN</button>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!--  signup modal -->
+				<div id="signupmodal" class="modal fade" role="dialog">
+					<div class="modal-dialog">
+
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal">&times;</button>
+							</div>
+							<div class="modal-body">
+								<form th:action="@{/registration}" method="post">
+									<div class="form-group">
+										<label for="firstName" class="control-label">First
+											name</label> <input id="firstName" class="form-control"
+											name="firstName" />
+									</div>
+									<div class="form-group">
+										<label for="lastName" class="control-label">Last name</label>
+										<input id="lastName" class="form-control" name="lastName" />
+									</div>
+									<div class="form-group">
+										<label for="email" class="control-label">E-mail</label> <input
+											id="email" class="form-control" name="email" />
+									</div>
+									
+									<div class="form-group">
+										<label for="confirmEmail" class="control-label">Confirm
+											e-mail</label> <input id="confirmEmail" class="form-control"
+											name="confirmEmail" />
+									</div>
+									<div class="form-group">
+										<label for="phone" class="control-label">Phone</label> <input 
+											id="phone" class="form-control" name="phone" />
+									</div>
+									<div class="form-group">
+										<label for="password" class="control-label">Password</label> <input
+											id="password" class="form-control" type="password"
+											name="password" />
+									</div>
+									<div class="form-group">
+										<label for="confirmPassword" class="control-label">Confirm
+											password</label> <input id="confirmPassword" class="form-control"
+											type="password" name="confirmPassword" />
+									</div>
+									<div class="form-group">
+										<input id="terms" type="checkbox" name="terms" />   <label
+											class="control-label" for="terms"> I agree with the <a
+											href="#">terms and conditions</a> for Registration.
+										</label>
+									</div>
+									<div class="form-group">
+										<button type="submit" class="btn btn-success">Register</button>
+
+									</div>
+
+
+								</form>
+
+							</div>
+
+						</div>
+
+					</div>
+				</div>
+			</div>
+			<div class="col-md-1 col-xs-6" sec:authorize="isAuthenticated()">
+				<a th:href="@{/logout}">Logout</a>
+			</div>
+			<div class="col-md-1 col-xs-6">
+				<a href="">EN</a>
+			</div>
+			<div class="col-md-1 col-xs-12">
+				<a href=""> <input type="text" class="form-control" id="seach"></a>
+			</div>
+		</div>
+	</div>
+	<nav class="navbar navbar-default nav2">
+		<div class="container">
+			<div class="container-fluid"></div>
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse"
+					data-target="#myNavbar">
+					<span class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand logo" href="#">logo</a>
+			</div>
+			<div class="collapse navbar-collapse" id="myNavbar">
+				<ul class="nav navbar-nav">
+
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					<li class=""><a href="/">Home</a></li>
+					<li><a href="#">Advertising</a></li>
+					<li><a href="#">Awards</a></li>
+					<li><a href="/contact">Contact us</a></li>
+					<li><a href="/about">About us</a></li>
+				</ul>
+			</div>
+		</div>
+		</div>
+	</nav>
+
+
+</header>

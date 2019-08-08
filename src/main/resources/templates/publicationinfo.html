@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+<th:block th:include="/_inccss"></th:block>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>ADMIN</title>
+</head>
+<body>
+	<th:block th:include="/_header"></th:block>
+<div class="container">
+
+<div class="col-md-4">
+<img  class="col-md-12 col-xs-12 btn-container" alt="☺" th:attr="src = '/upload/'+ ${@publicationService.getimagebypubid(pub.getId()).getUrl()}">
+</div>
+
+<div class="col-md-8">
+
+
+
+
+ <div th:text="${pub.title}" class="title"> </div> 
+
+
+
+<span class="desc">
+Description: 
+</span><br>
+ <span th:text="${pub.description}"> </span> <br>
+
+
+
+ <span th:text="${pub.category}" class="category"> </span> 
+
+</div>
+<div class="col-md-12">
+
+
+Name: <span th:text="${user.firstName}"> </span> <br> <br>
+
+
+
+LastName: <span th:text="${user.lastName}"> </span>  <br> <br>
+
+
+Email:<span th:text="${user.email}"> </span><br> <br>
+
+</div>
+
+
+</div>
+	<th:block th:include="/_footer"></th:block>
+	<th:block th:include="/_incjs"></th:block>
+
+</body>
+</html>

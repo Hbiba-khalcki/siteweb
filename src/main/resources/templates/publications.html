@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+<th:block th:include="/_inccss"></th:block>
+<title>Profile</title>
+</head>
+<body>
+	<th:block th:include="/_header"></th:block>
+	<div class="container-fluid">
+		<div class="profil">
+			<h4 class="h4">My publications</h4>
+			<br>
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-5 col-sm-offset-4 col-xs-offset-1 col-sm-4">
+						<a href="/profile/publications" class="btn btn-default"> My
+							publication</a>
+					</div>
+					<div class="col-xs-5 col-sm-4">
+						<a href="/profile" class="btn btn-default"> My profile</a>
+					</div>
+				</div>
+				<br> <br>
+				<!-- Trigger the modal with a button -->
+				<a type="button" class="btn btn-info" data-toggle="modal"
+					data-target="#addmodal">ADD</a>
+				<!-- Modal -->
+				<div id="addmodal" class="modal fade" role="dialog">
+					<div class="modal-dialog">
+						<!-- Modal content-->
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal">&times;</button>
+								<h4 class="modal-title">Add publication</h4>
+							</div>
+							<div class="modal-body">
+								<form class="form" method="POST"
+									th:action="@{/profile/publications}"
+									enctype='multipart/form-data'>
+									<label for=""> Title</label> <input type="text" name="title"
+										placeholder="title" class="form-control"> <label
+										for="">Description</label>
+									<textarea type="text" name="description"
+										placeholder="description" class="form-control " rows="5"></textarea>
+									<label for="">Category</label> <select name="category"
+										class="form-control">
+										
+										
+										
+										<option value="Co-Money-Exchange">Co Money Exchange</option>
+										<option value="Governmenta-Organizations">Governmenta Organizations</option>
+										<option value="Semi-Governmental">Semi-Governmental</option>
+										<option value="Factories">Factories</option>
+										<option value="Banks">Banks</option>
+										<option value="Consulting-Offices">Consulting Offices</option>
+										<option value="Low-offices">Low offices</option>
+										<option value="Conferences">Conferences</option>
+										<option value="Clinics">Clinics</option>
+										<option value="School/Univerty">School/Univerty</option>
+										<option value="Programs">Programs</option>
+										<option value="Connecting-Companies">Connecting Companies</option>
+										<option value="Contracting-And-Building">Contracting And Building</option>
+										<option value="Hotels">Hotels</option>
+										<option value="Hairdressing-Salon(Men/women)">Hairdressing Salon(Men / women)</option>
+										<option value="Gym-And-Sports-Tool">Gym And Sports Tool</option>
+										<option value="Mall">Mall</option>
+										<option value="Educational-Centers">Educational Centers</option>
+										<option value="Travel-Agencies">Travel Agencies</option>
+										<option value="Tourist-Offices">Tourist Offices</option>
+										<option value="Showroom">Showroom</option>
+										<option value="Cleaning-Company">Cleaning Company</option>
+										<option value="Offices-Clearance-Transactions">Offices Clearance Transactions</option>
+										<option value="Services">Services</option>
+										<option value="Renting-Cars">Renting Cars</option>
+										<option value="Repair-And-Maintenance">Repair And Maintenance</option>
+										<option value="Electronics">Electronics</option>
+										<option value="Concessions">Concessions</option>
+										<option value="Others">Others</option>
+
+									</select> <label for="">Image</label> <input type="file" name="image"
+										placeholder="image" class="form-control" multiple> <label
+										for="">Date</label> <select name="date" class="form-control">
+										<option value="1-month">1 month</option>
+										<option value="3-months">3 months</option>
+										<option value="6-months">6 months</option>
+										<option value="1-year">1 year</option>
+									</select> <br> <br>
+									<button type="submit" class="btn btn-primary">ADD</button>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="table-responsive">
+					<table class="table table-hover ">
+
+
+
+						<thead>
+							<tr>
+								<th>Reference</th>
+								<th>Image</th>
+								<th>Title</th>
+								<th>Description</th>
+								<th>Date</th>
+								<th>Category</th>
+								<th>Action</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr th:if="${pub == null}">
+								<td>No Publications</td>
+							</tr>
+							<tr th:each="pub : ${pub} "
+								th:classappend="(${pub.isConfirm()} ? success : '') + (${pub.isCancel()} ? danger : '')">
+								<td><span th:text="${pub.id}"> </span></td>
+								<td><span><img class="pubimg" alt="☺"
+										th:attr="src = '/upload/'+ ${@publicationService.getimagebypubid(pub.getId()).getUrl()}">
+								</span></td>
+								<td><span th:text="${pub.title}"> </span></td>
+								<td><span th:text="${pub.description}"> </span></td>
+								<td><span th:text="${pub.date}"> </span></td>
+								<td><span th:text="${pub.category}"> </span></td>
+								<td>
+									<form th:action="@{/profile/publications/delete}" method="POST"
+										class="form-inline" style="display: inline">
+										<input name="id" type="hidden" th:attr="value = ${pub.id}">
+										<button href="" class="btn btn-danger">DELETE</button>
+
+									</form> <a type="button" class="btn btn-info" data-toggle="modal"
+									data-target="#updatemodal">RENEW</a>
+									<div id="updatemodal" class="modal fade" role="dialog">
+										<div class="modal-dialog">
+											<!-- Modal content-->
+											<div class="modal-content">
+												<div class="modal-header">
+													<button type="button" class="close" data-dismiss="modal">&times;</button>
+													<h4 class="modal-title">Add publication</h4>
+												</div>
+												<div class="modal-body">
+											
+								               <form class="form" method="POST"  th:action="@{/profile/publications}" enctype='multipart/form-data'>
+									<div class="alert alert-danger">
+									    If you are going to
+									  renew your publication, you will redo the necessary
+									  payments just like a new publication.
+									 </div>
+									<label for=""> Title</label> <input type="text" name="title"
+										placeholder="title" class="form-control"> <label
+										for="">Description</label>
+									<textarea type="text" name="description"
+										placeholder="description" class="form-control " rows="5"></textarea>
+									<label for="">Category</label> <select name="category"
+										class="form-control">
+										
+										
+										
+										<option value="Co-Money-Exchange">Co Money Exchange</option>
+										<option value="Governmenta-Organizations">Governmenta Organizations</option>
+										<option value="Semi-Governmental">Semi-Governmental</option>
+										<option value="Factories">Factories</option>
+										<option value="Banks">Banks</option>
+										<option value="Consulting-Offices">Consulting Offices</option>
+										<option value="Low-offices">Low offices</option>
+										<option value="Conferences">Conferences</option>
+										<option value="Clinics">Clinics</option>
+										<option value="School/Univerty">School/Univerty</option>
+										<option value="Programs">Programs</option>
+										<option value="Connecting-Companies">Connecting Companies</option>
+										<option value="Contracting-And-Building">Contracting And Building</option>
+										<option value="Hotels">Hotels</option>
+										<option value="Hairdressing-Salon(Men/women)">Hairdressing Salon(Men / women)</option>
+										<option value="Gym-And-Sports-Tool">Gym And Sports Tool</option>
+										<option value="Mall">Mall</option>
+										<option value="Educational-Centers">Educational Centers</option>
+										<option value="Travel-Agencies">Travel Agencies</option>
+										<option value="Tourist-Offices">Tourist Offices</option>
+										<option value="Showroom">Showroom</option>
+										<option value="Cleaning-Company">Cleaning Company</option>
+										<option value="Offices-Clearance-Transactions">Offices Clearance Transactions</option>
+										<option value="Services">Services</option>
+										<option value="Renting-Cars">Renting Cars</option>
+										<option value="Repair-And-Maintenance">Repair And Maintenance</option>
+										<option value="Electronics">Electronics</option>
+										<option value="Concessions">Concessions</option>
+										<option value="Others">Others</option>
+
+									</select> <label for="">Image</label> <input type="file" name="image"
+										placeholder="image" class="form-control" multiple> <label
+										for="">Date</label> <select name="date" class="form-control">
+										<option value="1-month">1 month</option>
+										<option value="3-months">3 months</option>
+										<option value="6-months">6 months</option>
+										<option value="1-year">1 year</option>
+									</select> <br> <br>
+									<button type="submit" class="btn btn-primary">RENEW</button>
+								</form>
+												</div>
+											</div>
+										</div>
+								</td>
+
+
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<th:block th:include="/_footer"></th:block>
+	<th:block th:include="/_incjs"></th:block>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+<th:block th:include="/_inccss"></th:block>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>ADMIN</title>
+</head>
+<body>
+	<th:block th:include="/_header"></th:block>
+	      <h4 class="h4"> ADMINISTRATION</h4> <br>
+        <div class="container">
+            <div class="row">
+            <div class="col-xs-4">
+                    <a href="/admin/slider" class="btn btn-default"> PHOTO-SLIDER</a>
+                </div>
+                <div class="col-xs-4">
+                    <a href="/admin/publications" class="btn btn-default"> PUBLICATIONS</a>
+                </div>
+                <div class="col-xs-4">
+                    <a href="/admin" class="btn btn-default"> USERS</a>
+                </div>
+            </div> 
+            <br> <br>
+	<a type="button" class="btn btn-info" data-toggle="modal"
+					data-target="#addmodal">ADD</a>
+				<!-- Modal -->
+				<div id="addmodal" class="modal fade" role="dialog">
+					<div class="modal-dialog">
+						<!-- Modal content-->
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal">&times;</button>
+								<h4 class="modal-title">Add Slider image</h4>
+							</div>
+							<div class="modal-body">
+								<form class="form" method="POST"
+									th:action="@{/admin/slider}" enctype='multipart/form-data'>
+								
+									 <label for="">Image</label> 
+									<input type="file" name="image" placeholder="image" class="form-control" multiple>
+								
+									   <br> <br>
+									<button type="submit" class="btn btn-primary">ADD</button>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+   <div class="table-responsive">
+				<table class="table table-hover ">
+
+
+
+						<thead>
+							<tr>
+								<th>Reference</th>
+								<th>Image</th>
+								<th>nom</th>
+								<th>Action</th>
+							</tr>
+						</thead>
+						<tbody>
+						<tr th:each="sliderimg : ${sliderimg}" >
+						<td><span th:text="${sliderimg.id}"> </span></td>
+						<td>
+						<img class="pubimg" alt="☺" th:attr="src = '/upload/'+ ${sliderimg.url}"> </td>
+						<td><span th:text="${sliderimg.nom}"> </span></td>
+						<td>
+						<form th:action="@{/admin/slider/delete}" method="POST"
+										class="form-inline" style="display: inline">
+										<input name="id" type="hidden" th:attr="value = ${sliderimg.id}">
+										<button href="" class="btn btn-danger">DELETE</button>
+
+						</form>
+						</td>
+						</tr>
+						
+							
+						</tbody>
+					</table>
+				</div>
+				</div>
+	<th:block th:include="/_footer"></th:block>
+	<th:block th:include="/_incjs"></th:block>
+
+</body>
+</html>
